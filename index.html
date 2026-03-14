@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name='impact-site-verification' value='6c751619-5ebf-47d1-b7ca-03be4d89a592'>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InversorPráctico — ETFs, Fiscalidad y Brokers para el inversor español</title>
@@ -25,9 +24,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
@@ -36,7 +33,6 @@
       overflow-x: hidden;
     }
 
-    /* ── BACKGROUND TEXTURE ── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -46,7 +42,6 @@
       pointer-events: none; z-index: 0;
     }
 
-    /* ── NOISE GRAIN ── */
     body::after {
       content: '';
       position: fixed; inset: 0;
@@ -54,7 +49,6 @@
       opacity: 0.4; pointer-events: none; z-index: 0;
     }
 
-    /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -64,25 +58,12 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
-
-    .logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800; font-size: 1.1rem;
-      color: var(--green); letter-spacing: -0.02em;
-      text-decoration: none;
-    }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--green); letter-spacing: -0.02em; text-decoration: none; }
     .logo span { color: var(--text); }
-
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.85rem; font-weight: 500;
-      color: var(--muted); text-decoration: none;
-      letter-spacing: 0.03em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); }
 
-    /* ── HERO ── */
     .hero {
       position: relative; z-index: 1;
       min-height: 88vh;
@@ -91,411 +72,108 @@
       text-align: center;
       padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 3rem);
     }
-
     .hero-tag {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--green);
-      border: 1px solid var(--border);
-      background: var(--green-dim);
+      border: 1px solid var(--border); background: var(--green-dim);
       padding: 0.35rem 0.9rem; border-radius: 999px;
-      margin-bottom: 2rem;
-      animation: fadeUp 0.6s ease both;
+      margin-bottom: 2rem; animation: fadeUp 0.6s ease both;
     }
-    .hero-tag::before {
-      content: '';
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--green);
-      animation: pulse 2s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
-    }
-
-    .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2.6rem, 7vw, 5.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      max-width: 860px;
-      animation: fadeUp 0.6s 0.1s ease both;
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      color: var(--green);
-      position: relative;
-    }
-
-    .hero h1 em::after {
-      content: '';
-      position: absolute; bottom: 2px; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--green), transparent);
-      border-radius: 2px;
-    }
-
-    .hero-sub {
-      margin-top: 1.5rem;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--muted); line-height: 1.7;
-      max-width: 560px;
-      animation: fadeUp 0.6s 0.2s ease both;
-    }
-
-    .hero-ctas {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-      justify-content: center; margin-top: 2.5rem;
-      animation: fadeUp 0.6s 0.3s ease both;
-    }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--green); color: #0a0f0d;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 0.9rem;
-      padding: 0.8rem 1.8rem; border-radius: 8px;
-      text-decoration: none; letter-spacing: -0.01em;
-      transition: all 0.2s; border: none; cursor: pointer;
-    }
+    .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+    .hero h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.6rem, 7vw, 5.5rem); line-height: 1.05; letter-spacing: -0.03em; max-width: 860px; animation: fadeUp 0.6s 0.1s ease both; }
+    .hero h1 em { font-style: normal; color: var(--green); position: relative; }
+    .hero h1 em::after { content: ''; position: absolute; bottom: 2px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green), transparent); border-radius: 2px; }
+    .hero-sub { margin-top: 1.5rem; font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); line-height: 1.7; max-width: 560px; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2.5rem; animation: fadeUp 0.6s 0.3s ease both; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--green); color: #0a0f0d; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; letter-spacing: -0.01em; transition: all 0.2s; border: none; cursor: pointer; }
     .btn-primary:hover { background: #5eead4; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(52,211,153,0.25); }
-
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: transparent; color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400; font-size: 0.9rem;
-      padding: 0.8rem 1.8rem; border-radius: 8px;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      transition: all 0.2s; cursor: pointer;
-    }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.9rem; padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--border); transition: all 0.2s; cursor: pointer; }
     .btn-ghost:hover { border-color: var(--green); color: var(--green); }
 
-    /* ── STATS BAR ── */
-    .stats-bar {
-      position: relative; z-index: 1;
-      display: flex; justify-content: center; flex-wrap: wrap;
-      gap: 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--bg2);
-    }
-
-    .stat-item {
-      padding: 1.5rem 3rem;
-      border-right: 1px solid var(--border);
-      text-align: center;
-    }
+    .stats-bar { position: relative; z-index: 1; display: flex; justify-content: center; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .stat-item { padding: 1.5rem 3rem; border-right: 1px solid var(--border); text-align: center; }
     .stat-item:last-child { border-right: none; }
+    .stat-val { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--green); letter-spacing: -0.03em; }
+    .stat-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 0.2rem; }
 
-    .stat-val {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800; font-size: 1.8rem;
-      color: var(--green); letter-spacing: -0.03em;
-    }
-
-    .stat-label {
-      font-size: 0.75rem; color: var(--muted);
-      letter-spacing: 0.05em; text-transform: uppercase;
-      margin-top: 0.2rem;
-    }
-
-    /* ── SECTIONS ── */
     section { position: relative; z-index: 1; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 3rem); }
+    .section-header { margin-bottom: 3rem; }
+    .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.03em; line-height: 1.1; }
+    .section-sub { font-size: 1rem; color: var(--muted); margin-top: 0.75rem; line-height: 1.7; max-width: 520px; }
 
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 4vw, 3rem);
-    }
-
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-label {
-      font-size: 0.7rem; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--green); margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      letter-spacing: -0.03em; line-height: 1.1;
-    }
-
-    .section-sub {
-      font-size: 1rem; color: var(--muted);
-      margin-top: 0.75rem; line-height: 1.7;
-      max-width: 520px;
-    }
-
-    /* ── ARTICLES ── */
     .articles-section { padding: 6rem 0; }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5px;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .article-card {
-      background: var(--card);
-      padding: 2rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      text-decoration: none; color: inherit;
-      display: flex; flex-direction: column;
-    }
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5px; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .article-card { background: var(--card); padding: 2rem; cursor: pointer; transition: background 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
     .article-card:hover { background: var(--bg3); }
-
-    .article-tag {
-      font-size: 0.68rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--green); margin-bottom: 1rem;
-    }
-
-    .article-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 1.05rem;
-      line-height: 1.3; letter-spacing: -0.01em;
-      flex: 1;
-    }
-
-    .article-meta {
-      display: flex; align-items: center; gap: 0.75rem;
-      margin-top: 1.5rem;
-      font-size: 0.78rem; color: var(--muted);
-    }
-
+    .article-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; }
+    .article-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; line-height: 1.3; letter-spacing: -0.01em; flex: 1; }
+    .article-meta { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; font-size: 0.78rem; color: var(--muted); }
     .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
-
-    .article-arrow {
-      margin-left: auto; color: var(--green); font-size: 1rem;
-      transition: transform 0.2s;
-    }
+    .article-arrow { margin-left: auto; color: var(--green); font-size: 1rem; transition: transform 0.2s; }
     .article-card:hover .article-arrow { transform: translateX(4px); }
 
-    /* ── CALCULATOR ── */
+    /* NUEVO: badge "Nuevo" en tarjeta */
+    .article-new { display: inline-block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(52,211,153,0.15); color: var(--green); border: 1px solid var(--border); padding: 0.15rem 0.55rem; border-radius: 999px; margin-left: 0.5rem; vertical-align: middle; }
+
     .calc-section { padding: 6rem 0; background: var(--bg2); }
-
-    .calc-wrapper {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-      align-items: start;
-    }
-
-    .calc-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-    }
-
-    .calc-box h3 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 1.2rem;
-      margin-bottom: 2rem; letter-spacing: -0.02em;
-    }
-
+    .calc-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .calc-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
+    .calc-box h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 2rem; letter-spacing: -0.02em; }
     .field { margin-bottom: 1.5rem; }
-    .field label {
-      display: block;
-      font-size: 0.78rem; font-weight: 500;
-      color: var(--muted); letter-spacing: 0.05em;
-      text-transform: uppercase; margin-bottom: 0.5rem;
-    }
-
-    .field input, .field select {
-      width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif; font-size: 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+    .field label { display: block; font-size: 0.78rem; font-weight: 500; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .field input, .field select { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem; outline: none; transition: border-color 0.2s; }
     .field input:focus, .field select:focus { border-color: var(--green); }
-
-    .calc-result {
-      background: var(--green-dim);
-      border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .result-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
+    .calc-result { background: var(--green-dim); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; }
+    .result-row { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
     .result-row:last-child { border-bottom: none; }
     .result-row .label { color: var(--muted); }
     .result-row .val { font-family: 'Syne', sans-serif; font-weight: 700; }
     .result-row.total .val { color: var(--green); font-size: 1.1rem; }
     .result-row.tax .val { color: var(--red); }
 
-    /* ── BROKER TABLE ── */
     .brokers-section { padding: 6rem 0; }
-
-    .broker-table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .broker-table thead tr {
-      background: var(--bg2);
-    }
-
-    .broker-table th {
-      padding: 1rem 1.5rem;
-      font-size: 0.72rem; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--muted); text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .broker-table td {
-      padding: 1.2rem 1.5rem;
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: middle;
-    }
-
+    .broker-table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .broker-table thead tr { background: var(--bg2); }
+    .broker-table th { padding: 1rem 1.5rem; font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); text-align: left; border-bottom: 1px solid var(--border); }
+    .broker-table td { padding: 1.2rem 1.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
     .broker-table tr:last-child td { border-bottom: none; }
     .broker-table tbody tr { background: var(--card); transition: background 0.15s; }
     .broker-table tbody tr:hover { background: var(--bg3); }
-
-    .broker-name {
-      font-family: 'Syne', sans-serif; font-weight: 700;
-      font-size: 1rem;
-    }
+    .broker-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
     .broker-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
-
-    .badge {
-      display: inline-block;
-      font-size: 0.68rem; font-weight: 500;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.25rem 0.65rem; border-radius: 999px;
-    }
+    .badge { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 999px; }
     .badge-green { background: rgba(52,211,153,0.12); color: var(--green); }
     .badge-yellow { background: rgba(251,191,36,0.12); color: #fbbf24; }
     .badge-red { background: rgba(248,113,113,0.1); color: var(--red); }
-
     .stars { color: var(--green); letter-spacing: -1px; }
-
-    .btn-sm {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: var(--green); color: #0a0f0d;
-      font-family: 'Syne', sans-serif; font-weight: 700;
-      font-size: 0.75rem; letter-spacing: 0.01em;
-      padding: 0.45rem 1rem; border-radius: 6px;
-      text-decoration: none; transition: all 0.2s;
-      white-space: nowrap;
-    }
+    .btn-sm { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--green); color: #0a0f0d; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.01em; padding: 0.45rem 1rem; border-radius: 6px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
     .btn-sm:hover { background: #5eead4; }
 
-    /* ── NEWSLETTER ── */
-    .newsletter-section {
-      padding: 6rem 0;
-      background: var(--bg2);
-    }
-
-    .newsletter-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: clamp(2.5rem, 5vw, 4rem);
-      text-align: center;
-      max-width: 680px; margin: 0 auto;
-      position: relative; overflow: hidden;
-    }
-
-    .newsletter-box::before {
-      content: '';
-      position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .newsletter-box h2 {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      letter-spacing: -0.03em; margin-bottom: 1rem;
-    }
-
+    .newsletter-section { padding: 6rem 0; background: var(--bg2); }
+    .newsletter-box { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: clamp(2.5rem, 5vw, 4rem); text-align: center; max-width: 680px; margin: 0 auto; position: relative; overflow: hidden; }
+    .newsletter-box::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 70%); pointer-events: none; }
+    .newsletter-box h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.2rem); letter-spacing: -0.03em; margin-bottom: 1rem; }
     .newsletter-box p { color: var(--muted); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; }
-
-    .newsletter-form {
-      display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;
-    }
-
-    .newsletter-form input {
-      flex: 1; min-width: 240px;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 8px; padding: 0.8rem 1.2rem;
-      color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
-      outline: none; transition: border-color 0.2s;
-    }
+    .newsletter-form { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+    .newsletter-form input { flex: 1; min-width: 240px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem 1.2rem; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
     .newsletter-form input:focus { border-color: var(--green); }
 
-    /* ── FOOTER ── */
-    footer {
-      position: relative; z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 3rem clamp(1rem, 4vw, 3rem);
-      display: flex; flex-wrap: wrap; gap: 2rem;
-      justify-content: space-between; align-items: center;
-    }
-
-    .footer-logo {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: 1rem; color: var(--green);
-      text-decoration: none;
-    }
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 3rem clamp(1rem, 4vw, 3rem); display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--green); text-decoration: none; }
     .footer-logo span { color: var(--muted); }
-
     .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .footer-links a {
-      font-size: 0.8rem; color: var(--muted); text-decoration: none;
-      transition: color 0.2s;
-    }
+    .footer-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--text); }
+    .footer-disclaimer { font-size: 0.72rem; color: var(--muted); line-height: 1.6; max-width: 100%; width: 100%; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 
-    .footer-disclaimer {
-      font-size: 0.72rem; color: var(--muted);
-      line-height: 1.6; max-width: 100%;
-      width: 100%;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .calc-wrapper { grid-template-columns: 1fr; gap: 2rem; }
@@ -507,7 +185,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#" class="logo">Inversor<span>Práctico</span></a>
     <ul class="nav-links">
@@ -519,7 +196,6 @@
     <a href="#newsletter" class="btn-primary" style="font-size:0.8rem; padding:0.6rem 1.2rem;">Suscribirse gratis</a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-tag">Para el inversor español real</div>
     <h1>Invierte en ETFs.<br/>Sin humo. Sin complicaciones.<br/><em>Con números.</em></h1>
@@ -530,24 +206,11 @@
     </div>
   </section>
 
-  <!-- STATS -->
   <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-val">+65%</div>
-      <div class="stat-label">Inversores en ETFs España 2025</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">0,05%</div>
-      <div class="stat-label">Comisión media ETF indexado</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">19–28%</div>
-      <div class="stat-label">Fiscalidad plusvalías IRPF</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">+2.000</div>
-      <div class="stat-label">ETFs disponibles en España</div>
-    </div>
+    <div class="stat-item"><div class="stat-val">+65%</div><div class="stat-label">Inversores en ETFs España 2025</div></div>
+    <div class="stat-item"><div class="stat-val">0,05%</div><div class="stat-label">Comisión media ETF indexado</div></div>
+    <div class="stat-item"><div class="stat-val">19–28%</div><div class="stat-label">Fiscalidad plusvalías IRPF</div></div>
+    <div class="stat-item"><div class="stat-val">+2.000</div><div class="stat-label">ETFs disponibles en España</div></div>
   </div>
 
   <!-- ARTICLES -->
@@ -570,6 +233,18 @@
             <span class="article-arrow">→</span>
           </div>
         </a>
+
+        <a href="/guias/mejores-brokers-espana-2025.html" class="article-card">
+          <div class="article-tag">Brokers · Comparativa <span class="article-new">Nuevo</span></div>
+          <div class="article-title">Mejores brokers para invertir en España en 2025: Trade Republic, DEGIRO, XTB y MyInvestor</div>
+          <div class="article-meta">
+            <span>10 min lectura</span>
+            <div class="article-meta-dot"></div>
+            <span>Todos los niveles</span>
+            <span class="article-arrow">→</span>
+          </div>
+        </a>
+
         <a href="#" class="article-card">
           <div class="article-tag">Fiscalidad · Imprescindible</div>
           <div class="article-title">Cómo declarar tus ETFs en la Renta: guía completa para no pagar de más</div>
@@ -580,16 +255,7 @@
             <span class="article-arrow">→</span>
           </div>
         </a>
-        <a href="#" class="article-card">
-          <div class="article-tag">Brokers · Comparativa</div>
-          <div class="article-title">Trade Republic vs DEGIRO vs MyInvestor: ¿cuál te conviene en 2025?</div>
-          <div class="article-meta">
-            <span>10 min lectura</span>
-            <div class="article-meta-dot"></div>
-            <span>Todos los niveles</span>
-            <span class="article-arrow">→</span>
-          </div>
-        </a>
+
         <a href="#" class="article-card">
           <div class="article-tag">Estrategia · Inversión pasiva</div>
           <div class="article-title">Cartera de ETFs para el inversor español perezoso (y eficiente)</div>
@@ -600,6 +266,7 @@
             <span class="article-arrow">→</span>
           </div>
         </a>
+
         <a href="#" class="article-card">
           <div class="article-tag">ETFs · Fiscalidad</div>
           <div class="article-title">ETF de acumulación vs distribución: qué es más eficiente para un residente en España</div>
@@ -610,6 +277,7 @@
             <span class="article-arrow">→</span>
           </div>
         </a>
+
         <a href="#" class="article-card">
           <div class="article-tag">Errores · Ahorra dinero</div>
           <div class="article-title">7 errores fiscales que cometen los inversores en España (y cómo evitarlos)</div>
@@ -638,10 +306,8 @@
             </p>
           </div>
         </div>
-
         <div class="calc-box reveal">
           <h3>🧮 Calculadora de plusvalías ETF</h3>
-
           <div class="field">
             <label>Precio de compra (€ por participación)</label>
             <input type="number" id="buyPrice" placeholder="ej: 100" value="100" oninput="calcular()" />
@@ -658,24 +324,11 @@
             <label>Comisiones totales (€)</label>
             <input type="number" id="fees" placeholder="ej: 5" value="5" oninput="calcular()" />
           </div>
-
           <div class="calc-result" id="resultado">
-            <div class="result-row">
-              <span class="label">Ganancia bruta</span>
-              <span class="val" id="r-bruta">—</span>
-            </div>
-            <div class="result-row">
-              <span class="label">Base imponible (tras comisiones)</span>
-              <span class="val" id="r-base">—</span>
-            </div>
-            <div class="result-row tax">
-              <span class="label">Impuestos a pagar (IRPF)</span>
-              <span class="val" id="r-tax">—</span>
-            </div>
-            <div class="result-row total">
-              <span class="label">Ganancia neta real</span>
-              <span class="val" id="r-neta">—</span>
-            </div>
+            <div class="result-row"><span class="label">Ganancia bruta</span><span class="val" id="r-bruta">—</span></div>
+            <div class="result-row"><span class="label">Base imponible (tras comisiones)</span><span class="val" id="r-base">—</span></div>
+            <div class="result-row tax"><span class="label">Impuestos a pagar (IRPF)</span><span class="val" id="r-tax">—</span></div>
+            <div class="result-row total"><span class="label">Ganancia neta real</span><span class="val" id="r-neta">—</span></div>
           </div>
         </div>
       </div>
@@ -688,9 +341,8 @@
       <div class="section-header reveal">
         <div class="section-label">Comparativa actualizada 2025</div>
         <h2 class="section-title">¿Qué broker elegir para ETFs?</h2>
-        <p class="section-sub">Comparativa honesta con comisiones reales. Sin publicidad encubierta — solo datos.</p>
+        <p class="section-sub">Comparativa honesta con comisiones reales. Sin publicidad encubierta — solo datos. <a href="/guias/mejores-brokers-espana-2025.html" style="color:var(--green); text-decoration:none;">Ver análisis completo →</a></p>
       </div>
-
       <div class="reveal">
         <table class="broker-table">
           <thead>
@@ -706,10 +358,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>
-                <div class="broker-name">Trade Republic</div>
-                <div class="broker-sub">Broker alemán, IBAN español</div>
-              </td>
+              <td><div class="broker-name">Trade Republic</div><div class="broker-sub">Broker alemán, IBAN español</div></td>
               <td><span class="badge badge-green">1€ fijo</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
               <td>+2.000</td>
@@ -718,10 +367,7 @@
               <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
             </tr>
             <tr>
-              <td>
-                <div class="broker-name">DEGIRO</div>
-                <div class="broker-sub">Broker holandés, muy popular</div>
-              </td>
+              <td><div class="broker-name">DEGIRO</div><div class="broker-sub">Broker holandés, muy popular</div></td>
               <td><span class="badge badge-green">Desde 2€</span></td>
               <td><span class="badge badge-yellow">0,25% anual</span></td>
               <td>+3.000</td>
@@ -730,22 +376,16 @@
               <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
             </tr>
             <tr>
-              <td>
-                <div class="broker-name">MyInvestor</div>
-                <div class="broker-sub">Neobanco español, regulado CNMV</div>
-              </td>
+              <td><div class="broker-name">MyInvestor</div><div class="broker-sub">Neobanco español, regulado CNMV</div></td>
               <td><span class="badge badge-yellow">0,12% (mín. 2€)</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
               <td>+1.300</td>
               <td>Inversor español conservador</td>
               <td><span class="stars">★★★★☆</span></td>
-              <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
+              <td><a href="https://myinvestor.es" class="btn-sm" target="_blank" rel="noopener">Ver web →</a></td>
             </tr>
             <tr>
-              <td>
-                <div class="broker-name">Interactive Brokers</div>
-                <div class="broker-sub">El broker profesional por excelencia</div>
-              </td>
+              <td><div class="broker-name">Interactive Brokers</div><div class="broker-sub">El broker profesional por excelencia</div></td>
               <td><span class="badge badge-green">Desde 3€</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
               <td>+7.000</td>
@@ -754,10 +394,7 @@
               <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
             </tr>
             <tr>
-              <td>
-                <div class="broker-name">XTB</div>
-                <div class="broker-sub">Broker polaco con oficina en España</div>
-              </td>
+              <td><div class="broker-name">XTB</div><div class="broker-sub">Broker polaco con oficina en España</div></td>
               <td><span class="badge badge-green">0% hasta 100k€/mes</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
               <td>+370</td>
@@ -788,7 +425,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <a href="#" class="footer-logo">Inversor<span>Práctico</span></a>
     <div class="footer-links">
@@ -798,62 +434,47 @@
       <a href="#">Privacidad</a>
       <a href="#">Contacto</a>
     </div>
-    <p class="footer-disclaimer">
-      InversorPráctico es un sitio de educación financiera. El contenido es meramente informativo y no constituye asesoramiento financiero. Invierte siempre con responsabilidad y consulta a un profesional si lo necesitas. Algunos enlaces son de afiliado — esto no influye en nuestras opiniones.
-    </p>
+    <p class="footer-disclaimer">InversorPráctico es un sitio de educación financiera. El contenido es meramente informativo y no constituye asesoramiento financiero. Invierte siempre con responsabilidad y consulta a un profesional si lo necesitas. Algunos enlaces son de afiliado — esto no influye en nuestras opiniones.</p>
   </footer>
 
   <script>
-    // ── SCROLL REVEAL ──
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // ── CALCULATOR ──
     function calcular() {
-      const buy   = parseFloat(document.getElementById('buyPrice').value) || 0;
-      const sell  = parseFloat(document.getElementById('sellPrice').value) || 0;
-      const num   = parseFloat(document.getElementById('numPart').value) || 0;
-      const fees  = parseFloat(document.getElementById('fees').value) || 0;
-
+      const buy  = parseFloat(document.getElementById('buyPrice').value) || 0;
+      const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
+      const num  = parseFloat(document.getElementById('numPart').value) || 0;
+      const fees = parseFloat(document.getElementById('fees').value) || 0;
       const bruta = (sell - buy) * num;
       const base  = bruta - fees;
-
       let tax = 0;
       if (base > 0) {
-        // Tramos IRPF 2024 plusvalías
         const tramos = [
-          { hasta: 6000,  tipo: 0.19 },
-          { hasta: 50000, tipo: 0.21 },
-          { hasta: 200000,tipo: 0.23 },
-          { hasta: 300000,tipo: 0.27 },
+          { hasta: 6000, tipo: 0.19 }, { hasta: 50000, tipo: 0.21 },
+          { hasta: 200000, tipo: 0.23 }, { hasta: 300000, tipo: 0.27 },
           { hasta: Infinity, tipo: 0.28 },
         ];
-        let restante = base;
-        let prev = 0;
+        let restante = base, prev = 0;
         for (const t of tramos) {
           const tramo = Math.min(restante, t.hasta - prev);
           if (tramo <= 0) break;
           tax += tramo * t.tipo;
-          restante -= tramo;
-          prev = t.hasta;
+          restante -= tramo; prev = t.hasta;
           if (restante <= 0) break;
         }
       }
-
       const neta = base - tax;
-
       const fmt = (n) => n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
-
       document.getElementById('r-bruta').textContent = fmt(bruta);
       document.getElementById('r-base').textContent  = fmt(base);
       document.getElementById('r-tax').textContent   = fmt(tax);
       document.getElementById('r-neta').textContent  = fmt(neta);
       document.getElementById('r-neta').style.color  = neta >= 0 ? 'var(--green)' : 'var(--red)';
     }
-
-    calcular(); // run on load
+    calcular();
   </script>
 </body>
 </html>
