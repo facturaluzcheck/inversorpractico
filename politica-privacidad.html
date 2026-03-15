@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad | InversorPráctico</title>
+  <meta name="description" content="Política de privacidad de InversorPráctico. Cómo tratamos tus datos personales conforme al RGPD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0f0d; --bg2: #0f1712; --card: #131a16;
+      --border: rgba(52, 211, 153, 0.12); --green: #34d399;
+      --green-dim: rgba(52, 211, 153, 0.08); --text: #e8f0ec;
+      --muted: #7a9488; --accent: #a3e4c7;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; line-height: 1.75; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 80% 60% at 20% -10%, rgba(52,211,153,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 110%, rgba(16,185,129,0.04) 0%, transparent 55%); pointer-events: none; z-index: 0; }
+    body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); opacity: 0.4; pointer-events: none; z-index: 0; }
+
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1rem, 4vw, 3rem); height: 64px; background: rgba(10,15,13,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--green); letter-spacing: -0.02em; text-decoration: none; }
+    .logo span { color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+
+    .container { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 4rem clamp(1rem, 4vw, 2rem) 6rem; }
+
+    .page-tag { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); background: var(--green-dim); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 999px; margin-bottom: 1.5rem; }
+
+    h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .update { font-size: 0.8rem; color: var(--muted); margin-bottom: 3rem; }
+
+    h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; margin: 2.5rem 0 0.75rem; color: var(--accent); }
+    p { margin-bottom: 1rem; color: var(--text); font-size: 0.97rem; }
+    ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; font-size: 0.97rem; }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+    .info-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .info-box p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .info-box p:last-child { margin-bottom: 0; }
+    .info-label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 3rem clamp(1rem, 4vw, 3rem); display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--green); text-decoration: none; }
+    .footer-logo span { color: var(--muted); }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-disclaimer { font-size: 0.72rem; color: var(--muted); line-height: 1.6; width: 100%; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Inversor<span>Práctico</span></a>
+  <ul class="nav-links">
+    <li><a href="/#articulos">Guías</a></li>
+    <li><a href="/#calculadora">Calculadora</a></li>
+    <li><a href="/#brokers">Brokers</a></li>
+    <li><a href="/#newsletter">Newsletter</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <div class="page-tag">Legal</div>
+  <h1>Política de Privacidad</h1>
+  <p class="update">Última actualización: marzo de 2025</p>
+
+  <h2>1. Responsable del tratamiento</h2>
+  <div class="info-box">
+    <p><span class="info-label">Responsable:</span> Aratz Arratibel</p>
+    <p><span class="info-label">Sitio web:</span> inversorpractico.es</p>
+    <p><span class="info-label">Email:</span> <a href="mailto:inversorpractico@gmail.com">inversorpractico@gmail.com</a></p>
+  </div>
+
+  <hr class="divider" />
+
+  <h2>2. Datos que recopilamos</h2>
+  <p>InversorPráctico recopila los siguientes datos personales:</p>
+  <ul>
+    <li><strong>Dirección de email</strong> — cuando te suscribes al newsletter a través del formulario del Sitio Web</li>
+    <li><strong>Datos de navegación</strong> — información técnica sobre tu visita (páginas visitadas, tiempo de navegación, dispositivo) a través de herramientas de analítica web</li>
+  </ul>
+  <p>No recopilamos datos sensibles ni información financiera personal.</p>
+
+  <hr class="divider" />
+
+  <h2>3. Finalidad del tratamiento</h2>
+  <p>Los datos recopilados se utilizan para las siguientes finalidades:</p>
+  <ul>
+    <li><strong>Gestión del newsletter</strong> — envío de comunicaciones periódicas sobre finanzas personales e inversión a los suscriptores que han dado su consentimiento expreso</li>
+    <li><strong>Analítica web</strong> — análisis del comportamiento de los usuarios para mejorar el contenido y la experiencia del Sitio Web</li>
+    <li><strong>Comunicaciones comerciales</strong> — únicamente a suscriptores del newsletter, información sobre productos o servicios financieros relacionados con el contenido del Sitio Web</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <h2>4. Base legal del tratamiento</h2>
+  <p>El tratamiento de tus datos se basa en:</p>
+  <ul>
+    <li><strong>Consentimiento expreso</strong> — para el envío del newsletter y comunicaciones comerciales. Puedes retirar tu consentimiento en cualquier momento</li>
+    <li><strong>Interés legítimo</strong> — para la analítica web destinada a mejorar el Sitio Web</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <h2>5. Conservación de los datos</h2>
+  <p>Los datos de email se conservarán mientras mantengas la suscripción al newsletter activa. Una vez que te des de baja, tus datos serán eliminados en un plazo máximo de 30 días.</p>
+  <p>Los datos de analítica web se conservan de forma anonimizada.</p>
+
+  <hr class="divider" />
+
+  <h2>6. Destinatarios de los datos</h2>
+  <p>Tus datos pueden ser compartidos con los siguientes terceros proveedores de servicios, únicamente para las finalidades descritas:</p>
+  <ul>
+    <li><strong>Brevo (Sendinblue)</strong> — plataforma de email marketing utilizada para gestionar el newsletter. Política de privacidad disponible en brevo.com</li>
+    <li><strong>Herramientas de analítica web</strong> — para el análisis del tráfico del Sitio Web</li>
+  </ul>
+  <p>No vendemos ni cedemos tus datos a terceros para fines comerciales propios.</p>
+
+  <hr class="divider" />
+
+  <h2>7. Tus derechos</h2>
+  <p>En virtud del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica de Protección de Datos (LOPDGDD), tienes derecho a:</p>
+  <ul>
+    <li><strong>Acceso</strong> — conocer qué datos tuyos tratamos</li>
+    <li><strong>Rectificación</strong> — corregir datos inexactos</li>
+    <li><strong>Supresión</strong> — solicitar la eliminación de tus datos</li>
+    <li><strong>Oposición</strong> — oponerte al tratamiento de tus datos</li>
+    <li><strong>Portabilidad</strong> — recibir tus datos en formato electrónico</li>
+    <li><strong>Retirada del consentimiento</strong> — en cualquier momento, sin que afecte a la licitud del tratamiento previo</li>
+  </ul>
+  <p>Puedes ejercer estos derechos enviando un email a <a href="mailto:inversorpractico@gmail.com">inversorpractico@gmail.com</a>. También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).</p>
+
+  <hr class="divider" />
+
+  <h2>8. Cookies</h2>
+  <p>Este Sitio Web puede utilizar cookies técnicas necesarias para su funcionamiento y cookies de analítica para medir el tráfico. Las cookies de analítica solo se activan con tu consentimiento.</p>
+  <p>Puedes configurar tu navegador para rechazar todas las cookies, aunque esto puede afectar al funcionamiento del Sitio Web.</p>
+
+  <hr class="divider" />
+
+  <h2>9. Seguridad</h2>
+  <p>Aplicamos medidas técnicas y organizativas adecuadas para proteger tus datos personales contra el acceso no autorizado, la pérdida o la destrucción accidental.</p>
+
+  <hr class="divider" />
+
+  <h2>10. Cambios en esta política</h2>
+  <p>Nos reservamos el derecho a actualizar esta Política de Privacidad. Te notificaremos cualquier cambio significativo a través del newsletter o mediante un aviso visible en el Sitio Web.</p>
+
+  <hr class="divider" />
+
+  <h2>11. Contacto</h2>
+  <p>Para cualquier consulta relacionada con esta Política de Privacidad o el tratamiento de tus datos: <a href="mailto:inversorpractico@gmail.com">inversorpractico@gmail.com</a></p>
+
+</div>
+
+<footer>
+  <a href="/" class="footer-logo">Inversor<span>Práctico</span></a>
+  <div class="footer-links">
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/politica-privacidad.html">Privacidad</a>
+    <a href="mailto:inversorpractico@gmail.com">Contacto</a>
+  </div>
+  <p class="footer-disclaimer">InversorPráctico es un sitio de educación financiera. El contenido es meramente informativo y no constituye asesoramiento financiero. Algunos enlaces son de afiliado — esto no influye en nuestras opiniones.</p>
+</footer>
+
+</body>
+</html>
