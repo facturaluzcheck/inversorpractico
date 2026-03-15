@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suscripción confirmada | InversorPráctico</title>
+  <meta name="description" content="Te has suscrito correctamente al newsletter de InversorPráctico." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0f0d;
+      --bg2: #0f1712;
+      --card: #131a16;
+      --border: rgba(52, 211, 153, 0.12);
+      --green: #34d399;
+      --green-dim: rgba(52, 211, 153, 0.08);
+      --text: #e8f0ec;
+      --muted: #7a9488;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% -10%, rgba(52,211,153,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 110%, rgba(16,185,129,0.04) 0%, transparent 55%);
+      pointer-events: none; z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.4; pointer-events: none; z-index: 0;
+    }
+
+    .card {
+      position: relative; z-index: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: clamp(2.5rem, 6vw, 4rem);
+      text-align: center;
+      max-width: 520px;
+      width: 90%;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .check {
+      width: 72px; height: 72px;
+      background: var(--green-dim);
+      border: 2px solid var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 2rem;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    h1 em { font-style: normal; color: var(--green); }
+
+    p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.75rem 0;
+    }
+
+    .what-next {
+      text-align: left;
+      background: var(--green-dim);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .what-next-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .what-next ul { padding-left: 0; }
+    .what-next li {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .what-next li::before { content: "→ "; color: var(--green); font-weight: 700; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--green); color: #0a0f0d;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 2rem; border-radius: 8px;
+      text-decoration: none; letter-spacing: -0.01em;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #5eead4; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(52,211,153,0.25); }
+
+    .logo {
+      position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.1rem;
+      color: var(--green); letter-spacing: -0.02em;
+      text-decoration: none; z-index: 10;
+    }
+    .logo span { color: var(--text); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/" class="logo">Inversor<span>Práctico</span></a>
+
+  <div class="card">
+    <div class="check">✓</div>
+
+    <h1>¡Ya estás dentro,<br/><em>inversor práctico!</em></h1>
+
+    <p>Tu suscripción al newsletter semanal de InversorPráctico ha sido registrada correctamente.</p>
+
+    <hr class="divider" />
+
+    <div class="what-next">
+      <div class="what-next-title">¿Qué pasa ahora?</div>
+      <ul>
+        <li>Cada domingo recibirás una idea accionable sobre ETFs, brokers o fiscalidad</li>
+        <li>Sin spam, sin rollos — solo lo que de verdad importa</li>
+        <li>Puedes darte de baja en cualquier momento</li>
+      </ul>
+    </div>
+
+    <a href="/" class="btn-primary">Volver a InversorPráctico →</a>
+  </div>
+
+</body>
+</html>
