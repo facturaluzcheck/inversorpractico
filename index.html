@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InversorPráctico — ETFs, Fiscalidad y Brokers para el inversor español</title>
   <meta name="description" content="Guías prácticas sobre ETFs, comparativa de brokers y herramientas fiscales para el inversor español. Sin humo, solo datos." />
@@ -176,11 +175,23 @@
     .reveal.visible { opacity: 1; transform: none; }
 
     @media (max-width: 768px) {
+      html, body { overflow-x: hidden; }
       .nav-links { display: none; }
+      .btn-primary { font-size: 0.75rem; padding: 0.55rem 1rem; }
+      .hero { padding: 3rem 1.5rem; min-height: auto; }
+      .hero h1 { font-size: clamp(2rem, 11vw, 3.5rem); word-break: break-word; }
+      .stats-bar { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 1rem 2rem; width: 100%; }
+      .stat-item:last-child { border-bottom: none; }
       .calc-wrapper { grid-template-columns: 1fr; gap: 2rem; }
-      .stat-item { padding: 1.2rem 1.5rem; }
-      .broker-table { font-size: 0.8rem; }
-      .broker-table th, .broker-table td { padding: 0.9rem 1rem; }
+      .broker-table { font-size: 0.78rem; }
+      .broker-table th, .broker-table td { padding: 0.7rem 0.75rem; }
+      .broker-table th:nth-child(3), .broker-table td:nth-child(3),
+      .broker-table th:nth-child(4), .broker-table td:nth-child(4),
+      .broker-table th:nth-child(5), .broker-table td:nth-child(5) { display: none; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { min-width: unset; width: 100%; }
     }
   </style>
 </head>
@@ -435,12 +446,12 @@
     <div class="footer-links">
       <a href="/aviso-legal.html">Aviso legal</a>
       <a href="/politica-privacidad.html">Privacidad</a>
-      <a href="mailto:inversorpractico@gmail.com">Contacto</a>
+      <a href="/cdn-cgi/l/email-protection#dcb5b2aab9aeafb3aeacaebdbfa8b5bfb39cbbb1bdb5b0f2bfb3b1">Contacto</a>
     </div>
     <p class="footer-disclaimer">InversorPráctico es un sitio de educación financiera. El contenido es meramente informativo y no constituye asesoramiento financiero. Invierte siempre con responsabilidad y consulta a un profesional si lo necesitas. Algunos enlaces son de afiliado — esto no influye en nuestras opiniones.</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
     }, { threshold: 0.1 });
@@ -474,10 +485,4 @@
       document.getElementById('r-bruta').textContent = fmt(bruta);
       document.getElementById('r-base').textContent  = fmt(base);
       document.getElementById('r-tax').textContent   = fmt(tax);
-      document.getElementById('r-neta').textContent  = fmt(neta);
-      document.getElementById('r-neta').style.color  = neta >= 0 ? 'var(--green)' : 'var(--red)';
-    }
-    calcular();
-  </script>
-</body>
-</html>
+      document.getElementById('r-neta').textContent  = fm
