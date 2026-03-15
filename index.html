@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InversorPráctico — ETFs, Fiscalidad y Brokers para el inversor español</title>
   <meta name="description" content="Guías prácticas sobre ETFs, comparativa de brokers y herramientas fiscales para el inversor español. Sin humo, solo datos." />
@@ -115,8 +116,6 @@
     .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
     .article-arrow { margin-left: auto; color: var(--green); font-size: 1rem; transition: transform 0.2s; }
     .article-card:hover .article-arrow { transform: translateX(4px); }
-
-    /* NUEVO: badge "Nuevo" en tarjeta */
     .article-new { display: inline-block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(52,211,153,0.15); color: var(--green); border: 1px solid var(--border); padding: 0.15rem 0.55rem; border-radius: 999px; margin-left: 0.5rem; vertical-align: middle; }
 
     .calc-section { padding: 6rem 0; background: var(--bg2); }
@@ -171,26 +170,23 @@
     .footer-disclaimer { font-size: 0.72rem; color: var(--muted); line-height: 1.6; max-width: 100%; width: 100%; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .reveal { opacity: 1; transform: none; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
     @media (max-width: 768px) {
       html, body { overflow-x: hidden; }
       .nav-links { display: none; }
       .btn-primary { font-size: 0.75rem; padding: 0.55rem 1rem; }
       .hero { padding: 3rem 1.5rem; min-height: auto; }
-      .hero h1 { font-size: 1.75rem; word-break: normal; letter-spacing: -0.02em; line-height: 1.15; }
+      .hero h1 { font-size: 2rem; }
       .stats-bar { flex-direction: column; }
       .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 1rem 2rem; width: 100%; }
       .stat-item:last-child { border-bottom: none; }
       .calc-wrapper { grid-template-columns: 1fr; gap: 2rem; }
-      .broker-table { font-size: 0.78rem; }
-      .broker-table th, .broker-table td { padding: 0.7rem 0.75rem; }
-      .broker-table th:nth-child(3), .broker-table td:nth-child(3),
-      .broker-table th:nth-child(4), .broker-table td:nth-child(4),
-      .broker-table th:nth-child(5), .broker-table td:nth-child(5),
-      .broker-table th:nth-child(6), .broker-table td:nth-child(6) { display: none; }
-      .btn-sm { font-size: 0.68rem; padding: 0.35rem 0.7rem; }
       .articles-grid { grid-template-columns: 1fr; }
+      .broker-table-wrap { overflow-x: auto; }
+      .broker-table { font-size: 0.8rem; min-width: 600px; }
+      .broker-table th, .broker-table td { padding: 0.9rem 1rem; }
       .newsletter-form { flex-direction: column; }
       .newsletter-form input { min-width: unset; width: 100%; }
       .reveal { opacity: 1 !important; transform: none !important; }
@@ -227,7 +223,6 @@
     <div class="stat-item"><div class="stat-val">+2.000</div><div class="stat-label">ETFs disponibles en España</div></div>
   </div>
 
-  <!-- ARTICLES -->
   <section class="articles-section" id="articulos">
     <div class="container">
       <div class="section-header reveal">
@@ -235,78 +230,41 @@
         <h2 class="section-title">Lo que necesitas saber,<br/>explicado sin rodeos</h2>
         <p class="section-sub">Contenido escrito por alguien que trabaja en el sector. No es teoría, es lo que realmente importa.</p>
       </div>
-
       <div class="articles-grid reveal">
         <a href="/guias/articulo-etfs-espana.html" class="article-card">
           <div class="article-tag">ETFs · Guía esencial</div>
           <div class="article-title">Cómo empezar a invertir en ETFs desde España en 2025: paso a paso</div>
-          <div class="article-meta">
-            <span>8 min lectura</span>
-            <div class="article-meta-dot"></div>
-            <span>Principiante</span>
-            <span class="article-arrow">→</span>
-          </div>
+          <div class="article-meta"><span>8 min lectura</span><div class="article-meta-dot"></div><span>Principiante</span><span class="article-arrow">→</span></div>
         </a>
-
         <a href="/guias/mejores-brokers-espana-2025.html" class="article-card">
           <div class="article-tag">Brokers · Comparativa <span class="article-new">Nuevo</span></div>
           <div class="article-title">Mejores brokers para invertir en España en 2025: Trade Republic, DEGIRO, XTB y MyInvestor</div>
-          <div class="article-meta">
-            <span>10 min lectura</span>
-            <div class="article-meta-dot"></div>
-            <span>Todos los niveles</span>
-            <span class="article-arrow">→</span>
-          </div>
+          <div class="article-meta"><span>10 min lectura</span><div class="article-meta-dot"></div><span>Todos los niveles</span><span class="article-arrow">→</span></div>
         </a>
-
         <a href="#" class="article-card">
           <div class="article-tag">Fiscalidad · Imprescindible</div>
           <div class="article-title">Cómo declarar tus ETFs en la Renta: guía completa para no pagar de más</div>
-          <div class="article-meta">
-            <span>12 min lectura</span>
-            <div class="article-meta-dot"></div>
-            <span>Intermedio</span>
-            <span class="article-arrow">→</span>
-          </div>
+          <div class="article-meta"><span>12 min lectura</span><div class="article-meta-dot"></div><span>Intermedio</span><span class="article-arrow">→</span></div>
         </a>
-
         <a href="#" class="article-card">
           <div class="article-tag">Estrategia · Inversión pasiva</div>
           <div class="article-title">Cartera de ETFs para el inversor español perezoso (y eficiente)</div>
-          <div class="article-meta">
-            <span>9 min lectura</span>
-            <div class="article-meta-dot"></div>
-            <span>Intermedio</span>
-            <span class="article-arrow">→</span>
-          </div>
+          <div class="article-meta"><span>9 min lectura</span><div class="article-meta-dot"></div><span>Intermedio</span><span class="article-arrow">→</span></div>
         </a>
-
         <a href="#" class="article-card">
           <div class="article-tag">ETFs · Fiscalidad</div>
           <div class="article-title">ETF de acumulación vs distribución: qué es más eficiente para un residente en España</div>
-          <div class="article-meta">
-            <span>7 min lectura</span>
-            <div class="article-meta-dot"></div>
-            <span>Intermedio</span>
-            <span class="article-arrow">→</span>
-          </div>
+          <div class="article-meta"><span>7 min lectura</span><div class="article-meta-dot"></div><span>Intermedio</span><span class="article-arrow">→</span></div>
         </a>
-
         <a href="#" class="article-card">
           <div class="article-tag">Errores · Ahorra dinero</div>
           <div class="article-title">7 errores fiscales que cometen los inversores en España (y cómo evitarlos)</div>
-          <div class="article-meta">
-            <span>6 min lectura</span>
-            <div class="article-meta-dot"></div>
-            <span>Todos los niveles</span>
-            <span class="article-arrow">→</span>
-          </div>
+          <div class="article-meta"><span>6 min lectura</span><div class="article-meta-dot"></div><span>Todos los niveles</span><span class="article-arrow">→</span></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CALCULATOR -->
   <section class="calc-section" id="calculadora">
     <div class="container">
       <div class="calc-wrapper">
@@ -315,29 +273,15 @@
           <h2 class="section-title">Calcula tus plusvalías antes de vender</h2>
           <p class="section-sub" style="margin-bottom:2rem;">Sabe exactamente cuánto pagarás a Hacienda antes de ejecutar la venta. Aplica los tramos del IRPF 2024 para residentes en España.</p>
           <div style="background:var(--green-dim); border:1px solid var(--border); border-radius:10px; padding:1.2rem 1.5rem;">
-            <p style="font-size:0.82rem; color:var(--muted); line-height:1.6;">
-              <strong style="color:var(--accent);">¿Sabías que</strong> los ETFs de acumulación difieren el pago de impuestos? Reinvierten los dividendos automáticamente y solo tributas cuando vendes. Más eficiente que un ETF de distribución para la mayoría de inversores españoles.
-            </p>
+            <p style="font-size:0.82rem; color:var(--muted); line-height:1.6;"><strong style="color:var(--accent);">¿Sabías que</strong> los ETFs de acumulación difieren el pago de impuestos? Reinvierten los dividendos automáticamente y solo tributas cuando vendes. Más eficiente que un ETF de distribución para la mayoría de inversores españoles.</p>
           </div>
         </div>
         <div class="calc-box reveal">
           <h3>🧮 Calculadora de plusvalías ETF</h3>
-          <div class="field">
-            <label>Precio de compra (€ por participación)</label>
-            <input type="number" id="buyPrice" placeholder="ej: 100" value="100" oninput="calcular()" />
-          </div>
-          <div class="field">
-            <label>Precio de venta (€ por participación)</label>
-            <input type="number" id="sellPrice" placeholder="ej: 150" value="150" oninput="calcular()" />
-          </div>
-          <div class="field">
-            <label>Número de participaciones</label>
-            <input type="number" id="numPart" placeholder="ej: 50" value="50" oninput="calcular()" />
-          </div>
-          <div class="field">
-            <label>Comisiones totales (€)</label>
-            <input type="number" id="fees" placeholder="ej: 5" value="5" oninput="calcular()" />
-          </div>
+          <div class="field"><label>Precio de compra (€ por participación)</label><input type="number" id="buyPrice" placeholder="ej: 100" value="100" oninput="calcular()" /></div>
+          <div class="field"><label>Precio de venta (€ por participación)</label><input type="number" id="sellPrice" placeholder="ej: 150" value="150" oninput="calcular()" /></div>
+          <div class="field"><label>Número de participaciones</label><input type="number" id="numPart" placeholder="ej: 50" value="50" oninput="calcular()" /></div>
+          <div class="field"><label>Comisiones totales (€)</label><input type="number" id="fees" placeholder="ej: 5" value="5" oninput="calcular()" /></div>
           <div class="calc-result" id="resultado">
             <div class="result-row"><span class="label">Ganancia bruta</span><span class="val" id="r-bruta">—</span></div>
             <div class="result-row"><span class="label">Base imponible (tras comisiones)</span><span class="val" id="r-base">—</span></div>
@@ -349,7 +293,6 @@
     </div>
   </section>
 
-  <!-- BROKERS -->
   <section class="brokers-section" id="brokers">
     <div class="container">
       <div class="section-header reveal">
@@ -357,17 +300,11 @@
         <h2 class="section-title">¿Qué broker elegir para ETFs?</h2>
         <p class="section-sub">Comparativa honesta con comisiones reales. Sin publicidad encubierta — solo datos. <a href="/guias/mejores-brokers-espana-2025.html" style="color:var(--green); text-decoration:none;">Ver análisis completo →</a></p>
       </div>
-      <div class="reveal">
+      <div class="reveal broker-table-wrap">
         <table class="broker-table">
           <thead>
             <tr>
-              <th>Broker</th>
-              <th>Comisión ETF</th>
-              <th>Custodia</th>
-              <th>ETFs disponibles</th>
-              <th>Ideal para</th>
-              <th>Valoración</th>
-              <th></th>
+              <th>Broker</th><th>Comisión ETF</th><th>Custodia</th><th>ETFs disponibles</th><th>Ideal para</th><th>Valoración</th><th></th>
             </tr>
           </thead>
           <tbody>
@@ -375,8 +312,7 @@
               <td><div class="broker-name">Trade Republic</div><div class="broker-sub">Broker alemán, IBAN español</div></td>
               <td><span class="badge badge-green">1€ fijo</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
-              <td>+2.000</td>
-              <td>Principiante / DCA</td>
+              <td>+2.000</td><td>Principiante / DCA</td>
               <td><span class="stars">★★★★★</span></td>
               <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
             </tr>
@@ -384,8 +320,7 @@
               <td><div class="broker-name">DEGIRO</div><div class="broker-sub">Broker holandés, muy popular</div></td>
               <td><span class="badge badge-green">Desde 2€</span></td>
               <td><span class="badge badge-yellow">0,25% anual</span></td>
-              <td>+3.000</td>
-              <td>Operativa frecuente</td>
+              <td>+3.000</td><td>Operativa frecuente</td>
               <td><span class="stars">★★★★☆</span></td>
               <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
             </tr>
@@ -393,8 +328,7 @@
               <td><div class="broker-name">MyInvestor</div><div class="broker-sub">Neobanco español, regulado CNMV</div></td>
               <td><span class="badge badge-yellow">0,12% (mín. 2€)</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
-              <td>+1.300</td>
-              <td>Inversor español conservador</td>
+              <td>+1.300</td><td>Inversor español conservador</td>
               <td><span class="stars">★★★★☆</span></td>
               <td><a href="https://myinvestor.es" class="btn-sm" target="_blank" rel="noopener">Ver web →</a></td>
             </tr>
@@ -402,8 +336,7 @@
               <td><div class="broker-name">Interactive Brokers</div><div class="broker-sub">El broker profesional por excelencia</div></td>
               <td><span class="badge badge-green">Desde 3€</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
-              <td>+7.000</td>
-              <td>Inversor avanzado</td>
+              <td>+7.000</td><td>Inversor avanzado</td>
               <td><span class="stars">★★★★★</span></td>
               <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
             </tr>
@@ -411,8 +344,7 @@
               <td><div class="broker-name">XTB</div><div class="broker-sub">Broker polaco con oficina en España</div></td>
               <td><span class="badge badge-green">0% hasta 100k€/mes</span></td>
               <td><span class="badge badge-green">Gratis</span></td>
-              <td>+370</td>
-              <td>Principiante activo</td>
+              <td>+370</td><td>Principiante activo</td>
               <td><span class="stars">★★★★☆</span></td>
               <td><a href="#" class="btn-sm">Abrir cuenta →</a></td>
             </tr>
@@ -423,7 +355,6 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
   <section class="newsletter-section" id="newsletter">
     <div class="container">
       <div class="newsletter-box reveal">
@@ -431,8 +362,7 @@
         <h2>Finanzas útiles,<br/>una vez a la semana</h2>
         <p>Cada domingo: una idea accionable sobre ETFs, fiscalidad o brokers. Sin spam, sin rollos. Solo lo que sirve.</p>
         <form id="sib-form" method="POST" action="https://fd128183.sibforms.com/serve/MUIFAF_itoSXaA9bxhJ9aJLmgdAbjTnTEB_L8pv9sMjJdIM5nRaeBcK9vk61VV3-Hc8DBMw7BWhugMffuVuzYdlRntBWyksLAThD7vCSBnpqcIc4DHtgA6BgsnytYoRGAiUWW5kxwFyRmed7RG084tV3-cJjUjk7PCkSk2i_UXDpyreR6sM4t2cVZWiPFldFyrAc8K_x9BkoKdEn2g==" style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center;">
-          <input type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="tu@email.com" required
-            style="flex:1; min-width:240px; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:0.8rem 1.2rem; color:var(--text); font-family:'DM Sans',sans-serif; font-size:0.95rem; outline:none;" />
+          <input type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="tu@email.com" required style="flex:1; min-width:240px; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:0.8rem 1.2rem; color:var(--text); font-family:'DM Sans',sans-serif; font-size:0.95rem; outline:none;" />
           <input type="text" name="email_address_check" value="" style="display:none;">
           <input type="hidden" name="locale" value="es">
           <input type="hidden" name="html_type" value="simple">
@@ -448,15 +378,15 @@
     <div class="footer-links">
       <a href="/aviso-legal.html">Aviso legal</a>
       <a href="/politica-privacidad.html">Privacidad</a>
-      <a href="/cdn-cgi/l/email-protection#dcb5b2aab9aeafb3aeacaebdbfa8b5bfb39cbbb1bdb5b0f2bfb3b1">Contacto</a>
+      <a href="mailto:inversorpractico@gmail.com">Contacto</a>
     </div>
     <p class="footer-disclaimer">InversorPráctico es un sitio de educación financiera. El contenido es meramente informativo y no constituye asesoramiento financiero. Invierte siempre con responsabilidad y consulta a un profesional si lo necesitas. Algunos enlaces son de afiliado — esto no influye en nuestras opiniones.</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.1 });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.05 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     function calcular() {
@@ -483,8 +413,14 @@
         }
       }
       const neta = base - tax;
-      const fmt = (n) => n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+      const fmt = n => n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
       document.getElementById('r-bruta').textContent = fmt(bruta);
       document.getElementById('r-base').textContent  = fmt(base);
       document.getElementById('r-tax').textContent   = fmt(tax);
-      document.getElementById('r-neta').textContent  = fm
+      document.getElementById('r-neta').textContent  = fmt(neta);
+      document.getElementById('r-neta').style.color  = neta >= 0 ? 'var(--green)' : 'var(--red)';
+    }
+    calcular();
+  </script>
+</body>
+</html>
